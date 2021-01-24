@@ -96,7 +96,6 @@
         type: Git
       strategy:
         sourceStrategy:
-          incremental: true
           forcePull: true
           from:
             kind: ImageStreamTag
