@@ -23,9 +23,9 @@ COPY security.conf /etc/apache2/conf.d/security.conf
 COPY s2i/bin/ /usr/libexec/s2i
 
 RUN mkdir -p /var/www/html /usr/share/httpd && usermod -u 1001 apache && usermod -aG 0 apache && touch /etc/localtime /etc/timezone && \
-chown -R 1001 /etc/apache2 /usr/share/apache2/ /var/log/apache2 /usr/share/httpd /usr/lib/apache2 /var/www/html /var/www/localhost/htdocs/ /var/www/logs/ /run/apache2 /etc/timezone /etc/localtime /usr/libexec/s2i && \
-chgrp -R 0 /etc/apache2 /usr/share/apache2/ /usr/share/httpd /var/log/apache2 /usr/lib/apache2 /var/www/html /var/www/localhost/htdocs/ /var/www/logs/ /run/apache2 /etc/timezone /etc/localtime /usr/libexec/s2i && \
-chmod -R g=u /etc/apache2 /usr/share/apache2/ /var/log/apache2 /usr/share/httpd /usr/lib/apache2 /var/www/html /var/www/localhost/htdocs/ /var/www/logs/ /run/apache2 /etc/timezone /etc/localtime /usr/libexec/s2i && \
+chown -R 1001 /opt /etc/apache2 /usr/share/apache2/ /var/log/apache2 /usr/share/httpd /usr/lib/apache2 /var/www/html /var/www/localhost/htdocs/ /var/www/logs/ /run/apache2 /etc/timezone /etc/localtime /usr/libexec/s2i && \
+chgrp -R 0 /opt /etc/apache2 /usr/share/apache2/ /usr/share/httpd /var/log/apache2 /usr/lib/apache2 /var/www/html /var/www/localhost/htdocs/ /var/www/logs/ /run/apache2 /etc/timezone /etc/localtime /usr/libexec/s2i && \
+chmod -R g=u /opt /etc/apache2 /usr/share/apache2/ /var/log/apache2 /usr/share/httpd /usr/lib/apache2 /var/www/html /var/www/localhost/htdocs/ /var/www/logs/ /run/apache2 /etc/timezone /etc/localtime /usr/libexec/s2i && \
 chmod +x /usr/libexec/s2i/*
 
 WORKDIR /var/www/html
