@@ -26,11 +26,8 @@ echo "---> INSTALANDO CODIGO FUENTE..."
 mkdir /opt/src
 cp -Rf /tmp/src/* /opt/src/
 
-cd /opt/src && mkdocs build -v -d generate_docs
-rm -rf /var/www/html
-cp -rf /opt/src/generate_docs /var/www/html
+cd /opt/src && mkdocs build -v -d /var/www/html
 echo "---> DOCUMENTACION GENERADA!"
-fi
 
 /usr/libexec/s2i/fix /var/www/html
 
